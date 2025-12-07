@@ -3,6 +3,7 @@ import sys
 import os
 import requests
 from pathlib import Path
+import zipfile
 from threading import Thread
 from PySide6 import QtCore, QtWidgets, QtGui
 
@@ -11,11 +12,12 @@ from PySide6 import QtCore, QtWidgets, QtGui
 DOWNLOAD_DIR = Path.cwd() / "WinDownloads"
 DOWNLOAD_DIR.mkdir(exist_ok=True)
 
-LAUNCHER_EXE = DOWNLOAD_DIR / "win_launcher.exe"
-VERSION_FILE = DOWNLOAD_DIR / "version_win_launcher.txt"
+DOWNLOAD_ZIP = DOWNLOAD_DIR / "StormLibrary.zip"
+LAUNCHER_EXE = DOWNLOAD_DIR / "StormLibrary.exe"
+VERSION_FILE = DOWNLOAD_DIR / "StormLibraryVersion.txt"
 
-URL_LAUNCHER = "https://github.com/acierto-incomodo/The-Shooter-Launcher/releases/latest/download/launcher_win.exe"
-URL_VERSION  = "https://github.com/acierto-incomodo/The-Shooter-Launcher/releases/latest/download/version_win_launcher.txt"
+URL_LAUNCHER = "https://github.com/acierto-incomodo/StormLibraryV2/releases/latest/download/StormLibrary.zip"
+URL_VERSION  = "https://github.com/acierto-incomodo/StormLibraryV2/releases/latest/download/StormLibraryVersion.txt"
 
 # ---------------- Utils -------------------
 
@@ -42,7 +44,7 @@ class UpdaterWindow(QtWidgets.QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Launcher Updater")
+        self.setWindowTitle("StormLibraryV2 Updater")
         self.setMinimumSize(500, 125)
         self.setMaximumSize(500, 125)
 
@@ -52,7 +54,7 @@ class UpdaterWindow(QtWidgets.QWidget):
     def setup_ui(self):
         layout = QtWidgets.QVBoxLayout(self)
 
-        title = QtWidgets.QLabel("Actualizando Launcher…")
+        title = QtWidgets.QLabel("Actualizando StormLibrary...")
         title.setAlignment(QtCore.Qt.AlignCenter)
         title.setStyleSheet("font-size:22px; font-weight:bold;")
         layout.addWidget(title)
@@ -104,7 +106,7 @@ class UpdaterWindow(QtWidgets.QWidget):
 
         # Si ya está la última versión → ejecutar
         if local_version == remote_version and LAUNCHER_EXE.exists():
-            self.set_status("Launcher actualizado. Iniciando…")
+            self.set_status("StormLibraryV2 actualizado. Iniciando…")
             self.progress.setValue(100)
             QtCore.QTimer.singleShot(1000, self.run_launcher)
             return
@@ -120,13 +122,21 @@ class UpdaterWindow(QtWidgets.QWidget):
             # descargar version
             download(URL_VERSION, VERSION_FILE)
 
-            # descargar exe
-            download(URL_LAUNCHER, LAUNCHER_EXE,
+            # descargar zip
+            download(URL_LAUNCHER, DOWNLOAD_ZIP,
                      lambda p: QtCore.QMetaObject.invokeMethod(
                          self.progress, "setValue",
                          QtCore.Qt.QueuedConnection,
                          QtCore.Q_ARG(int, p)
                      ))
+
+            # Descomprimir
+            QtCore.QMetaObject.invokeMethod(self, "set_status", QtCore.Qt.QueuedConnection, QtCore.Q_ARG(str, "Descomprimiendo..."))
+            with zipfile.ZipFile(DOWNLOAD_ZIP, 'r') as zip_ref:
+                zip_ref.extractall(DOWNLOAD_DIR)
+
+            # Limpiar el zip
+            os.remove(DOWNLOAD_ZIP)
 
             QtCore.QMetaObject.invokeMethod(
                 self, "download_done",
@@ -149,7 +159,7 @@ class UpdaterWindow(QtWidgets.QWidget):
         try:
             os.startfile(str(LAUNCHER_EXE))
         except Exception as e:
-            self.error(f"No se pudo iniciar el launcher: {e}")
+            self.error(f"No se pudo iniciar StormLibraryV2: {e}")
             return
         self.close()
 

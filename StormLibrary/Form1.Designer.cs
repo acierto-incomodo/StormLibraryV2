@@ -16,6 +16,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             listGames = new ListBox();
             labelStatus = new Label();
             panelJuego = new Panel();
@@ -23,42 +24,27 @@
             // 
             // listGames
             // 
-            listGames.Font = new Font("Segoe UI", 12F);
-            listGames.ItemHeight = 28;
-            listGames.Location = new Point(20, 20);
+            resources.ApplyResources(listGames, "listGames");
             listGames.Name = "listGames";
-            listGames.Size = new Size(300, 396);
-            listGames.TabIndex = 0;
             listGames.SelectedIndexChanged += listGames_SelectedIndexChanged;
             // 
             // labelStatus
             // 
-            labelStatus.Font = new Font("Segoe UI", 10F);
-            labelStatus.Location = new Point(20, 440);
+            resources.ApplyResources(labelStatus, "labelStatus");
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(300, 30);
-            labelStatus.TabIndex = 1;
-            labelStatus.Text = "Cargando...";
             // 
             // panelJuego
             // 
-            panelJuego.AutoSize = true;
-            panelJuego.Location = new Point(340, 20);
+            resources.ApplyResources(panelJuego, "panelJuego");
             panelJuego.Name = "panelJuego";
-            panelJuego.Size = new Size(800, 400);
-            panelJuego.TabIndex = 2;
             // 
             // Form1
             // 
-            AutoSize = true;
-            ClientSize = new Size(1161, 500);
+            resources.ApplyResources(this, "$this");
             Controls.Add(listGames);
             Controls.Add(labelStatus);
             Controls.Add(panelJuego);
-            MinimumSize = new Size(878, 547);
             Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "StormLibrary Launcher";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

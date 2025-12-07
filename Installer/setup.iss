@@ -1,28 +1,29 @@
 [Setup]
 AppName=StormLibrary by StormGamesStudios
-AppVersion=1.0.4
-DefaultDirName={userappdata}\StormGamesStudios\NewGameDir\TheShooterLauncher
+AppVersion=1.0.6
+DefaultDirName={userappdata}\StormGamesStudios\StormLibraryV2
 DefaultGroupName=StormGamesStudios
-OutputDir=C:\Users\mapsp\Documents\GitHub\TheShooter\output
-OutputBaseFilename=The_Shooter_Launcher_Installer
+OutputDir=C:\Users\mapsp\source\repos\StormLibrary\output
+OutputBaseFilename=StormLibraryV2_Installer
 Compression=lzma
 SolidCompression=yes
 AppCopyright=Copyright © 2025 StormGamesStudios. All rights reserved.
 VersionInfoCompany=StormGamesStudios
 AppPublisher=StormGamesStudios
-SetupIconFile=logo.ico
-VersionInfoVersion=1.0.4.0
+SetupIconFile=../logo.ico
+VersionInfoVersion=1.0.6.0
+CloseApplications=yes
+CloseApplicationsFilter=StormLibrary.exe
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 
 [Files]
 ; Archivos del lanzador
-Source: "C:\Users\mapsp\Documents\GitHub\TheShooter\dist\installer_updater.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\mapsp\Documents\GitHub\TheShooter\logo.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\mapsp\Documents\GitHub\TheShooter\logo.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\mapsp\source\repos\StormLibrary\dist\installer_updater.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\mapsp\source\repos\StormLibrary\logo.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\mapsp\source\repos\StormLibrary\logo.png"; DestDir: "{app}"; Flags: ignoreversion
 
-; Instalador de ASP.NET Core Runtime
-Source: "C:\Ruta\Del\Instalador\aspnetcore-runtime-8.0.22-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+Source: "C:\Users\mapsp\source\repos\StormLibrary\Installer\aspnetcore-runtime-8.0.22-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
 
 [Icons]
 ; Acceso directo en el escritorio
@@ -34,7 +35,7 @@ Name: "{commonprograms}\StormGamesStudios\Desinstalar StormLibrary"; Filename: "
 
 [Registry]
 ; Guardar ruta de instalación para poder desinstalar
-Root: HKCU; Subkey: "Software\StormLibrary"; ValueType: string; ValueName: "Install_Dir"; ValueData: "{app}"
+Root: HKCU; Subkey: "Software\StormLibraryV2"; ValueType: string; ValueName: "Install_Dir"; ValueData: "{app}"
 
 [UninstallDelete]
 ; Eliminar carpeta del appdata y acceso directo
