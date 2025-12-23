@@ -38,5 +38,15 @@
     "descripcion": "Lethal Company es un juego cooperativo de terror donde un grupo de jugadores explora instalaciones abandonadas para recolectar chatarra, enfrentándose a criaturas peligrosas y gestionando bien el riesgo para cumplir los objetivos y sobrevivir.",
     "requisitos": "Steam abierto e internet",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/LethalCompany-Launcher/main/icono-lethal.png"
+  },
+  {
+    "nombre": "Mage Arena",
+    "descargar": "https://github.com/acierto-incomodo/mage_arena/releases/latest/download/MageArena_Launcher_Installer.exe",
+    "archivoDescargado": "MageArena_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/MageArenaLauncher",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Mage Arena es un juego de arena de magos donde los jugadores compiten en combates mágicos, usando hechizos y habilidades únicas para derrotar a sus oponentes.",
+    "requisitos": "Steam abierto e internet",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/mage_arena/main/icono.png"
   }
 ]
