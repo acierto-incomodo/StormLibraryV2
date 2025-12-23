@@ -53,7 +53,7 @@ namespace StormLibrary
 
             listGames.DataSource = juegos;
             listGames.DisplayMember = "nombre";
-            labelStatus.Text = "Listo";
+            labelStatus.Text = "Actualizado";
         }
 
         private void listGames_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,11 +104,11 @@ namespace StormLibrary
                 logo.ImageLocation = logoPath;
 
             // Título
-            Label titulo = new Label
+            Label lblRequisitos = new Label
             {
-                Text = juego.nombre,
-                Font = new Font("Segoe UI", 18),
-                Location = new Point(180, 20),
+                Text = "Requisitos:",
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                Location = new Point(180, Bottom + 10),
                 AutoSize = true,
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -123,7 +123,23 @@ namespace StormLibrary
                 Location = new Point(180, 60),
                 Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
                 Width = panelJuego.Width - 200,
-                Height = 150
+                Height = 150,
+                BackColor = panelJuego.BackColor,
+                ForeColor = panelJuego.ForeColor
+            };
+
+            TextBox txtRequisitos = new TextBox
+            {
+                Text = juego.requisitos ?? "No especificados",
+                Multiline = true,
+                ReadOnly = true,
+                Location = new Point(180, lblRequisitos.Bottom + 5),
+                Width = panelJuego.Width - 200,
+                Height = 60,
+                BackColor = panelJuego.BackColor,
+                ForeColor = panelJuego.ForeColor,
+                BorderStyle = BorderStyle.FixedSingle,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
             };
 
             // Botón Abrir / Descargar
@@ -271,6 +287,15 @@ namespace StormLibrary
                 File.WriteAllBytes(rutaDestino, data);
             }
             MessageBox.Show("Descarga completada.");
+        }
+
+        private void webOpenShare1_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/acierto-incomodo/StormLibraryV2/releases/latest",
+                UseShellExecute = true
+            });
         }
     }
 }
