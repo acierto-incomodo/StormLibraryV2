@@ -6,7 +6,7 @@
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/TheShooterLauncher_New",
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas.",
-    "requisitos": "Requisitos: Internet",
+    "requisitos": "Internet",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/The-Shooter-Launcher/main/logo.png"
   },
   {
@@ -16,7 +16,7 @@
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/KartsMultiplayerLauncher",
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Un juego divertido para jugar con amigos. Corre con karts en diferentes pistas, recoge potenciadores y lanza objetos a tus oponentes para ganar la carrera. ¡Compite en línea y demuestra quién es el mejor piloto de karts!",
-    "requisitos": "Requisitos: Internet",
+    "requisitos": "Internet",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/KartsMultiplayer/main/icono.png"
   },
   {
@@ -26,7 +26,17 @@
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/REPO_Launcher",
     "archivo_ejecutable": "R.E.P.O. Launcher.exe",
     "descripcion": "R.E.P.O. es un juego cooperativo de terror y acción donde los jugadores exploran zonas peligrosas para recuperar objetos valiosos, evitando criaturas y usando estrategia en equipo. En esta versión se incluyen **algunos mods** que añaden mejoras, cambios en la jugabilidad y contenido extra para una experiencia más divertida.",
-    "requisitos": "Requisitos: Steam abierto e internet",
+    "requisitos": "Steam abierto e internet",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/sgs-blog-disccussions/main/icono.png"
+  },
+  {
+    "nombre": "Lethal Company",
+    "descargar": "https://github.com/acierto-incomodo/LethalCompany-Launcher/releases/latest/download/LethalCompany_Launcher_Installer.exe",
+    "archivoDescargado": "LethalCompany_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/LethalCompany_Launcher",
+    "archivo_ejecutable": "Lethal Company - Launcher.exe",
+    "descripcion": "Lethal Company es un juego cooperativo de terror donde un grupo de jugadores explora instalaciones abandonadas para recolectar chatarra, enfrentándose a criaturas peligrosas y gestionando bien el riesgo para cumplir los objetivos y sobrevivir.",
+    "requisitos": "Steam abierto e internet",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/LethalCompany-Launcher/main/icono-lethal.png"
   }
 ]

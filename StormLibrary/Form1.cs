@@ -104,11 +104,11 @@ namespace StormLibrary
                 logo.ImageLocation = logoPath;
 
             // Título
-            Label lblRequisitos = new Label
+            Label titulo = new Label
             {
-                Text = "Requisitos:",
-                Font = new Font("Segoe UI", 10, FontStyle.Bold),
-                Location = new Point(180, Bottom + 10),
+                Text = juego.nombre,
+                Font = new Font("Segoe UI", 18),
+                Location = new Point(180, 20),
                 AutoSize = true,
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -126,6 +126,15 @@ namespace StormLibrary
                 Height = 150,
                 BackColor = panelJuego.BackColor,
                 ForeColor = panelJuego.ForeColor
+            };
+
+            Label lblRequisitos = new Label
+            {
+                Text = "Requisitos:",
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                Location = new Point(180, desc.Bottom + 10),
+                AutoSize = true,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
 
             TextBox txtRequisitos = new TextBox
@@ -146,7 +155,7 @@ namespace StormLibrary
             btnAccion = new Button
             {
                 Size = new Size(200, 40),
-                Location = new Point(180, 220),
+                Location = new Point(180, 320),
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
 
@@ -154,7 +163,7 @@ namespace StormLibrary
             Button btnAbrirCarpeta = new Button
             {
                 Size = new Size(200, 40),
-                Location = new Point(400, 220),
+                Location = new Point(400, 320),
                 Text = "Abrir carpeta",
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -170,7 +179,7 @@ namespace StormLibrary
             Button btnDesinstalar = new Button
             {
                 Size = new Size(200, 40),
-                Location = new Point(620, 220),
+                Location = new Point(620, 320),
                 Text = "Desinstalar",
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -195,6 +204,8 @@ namespace StormLibrary
             panelJuego.Controls.Add(logo);
             panelJuego.Controls.Add(titulo);
             panelJuego.Controls.Add(desc);
+            panelJuego.Controls.Add(lblRequisitos);
+            panelJuego.Controls.Add(txtRequisitos);
             panelJuego.Controls.Add(btnAccion);
             panelJuego.Controls.Add(btnAbrirCarpeta);
             panelJuego.Controls.Add(btnDesinstalar);
