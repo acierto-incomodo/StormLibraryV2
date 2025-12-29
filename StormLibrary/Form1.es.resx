@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="listGames.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 382</value>
+    <value>300, 361</value>
   </data>
   <data name="webOpenShare1.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 29</value>

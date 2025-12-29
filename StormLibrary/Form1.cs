@@ -48,12 +48,14 @@ namespace StormLibrary
         private async void Form1_Load(object sender, EventArgs e)
         {
             labelStatus.Text = "Actualizando...";
+
             await updateManager.CheckAndDownloadFiles(dataDir);
             juegos = await updateManager.LoadGames(dataDir);
 
             listGames.DataSource = juegos;
             listGames.DisplayMember = "nombre";
-            labelStatus.Text = "Actualizado";
+
+            ActualizarLabelVersion();
         }
 
         private void listGames_SelectedIndexChanged(object sender, EventArgs e)
@@ -344,6 +346,21 @@ namespace StormLibrary
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
+            }
+        }
+
+        private void ActualizarLabelVersion()
+        {
+            string rutaVersion = Path.Combine(dataDir, "gamesVersion.txt");
+
+            if (File.Exists(rutaVersion))
+            {
+                string version = File.ReadAllText(rutaVersion).Trim();
+                labelStatus.Text = version;
+            }
+            else
+            {
+                labelStatus.Text = "Versión desconocida";
             }
         }
     }
