@@ -251,11 +251,19 @@ namespace StormLibrary
 
         private void Abrir_Click(object sender, EventArgs e)
         {
-            string carpetaJuego = Path.GetFullPath(juegoSeleccionado.ubicacion.Replace("%appdata%", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)));
+            string carpetaJuego = Path.GetFullPath(
+                juegoSeleccionado.ubicacion.Replace(
+                    "%appdata%",
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                )
+            );
+
             string rutaEjecutable = Path.Combine(carpetaJuego, juegoSeleccionado.archivo_ejecutable);
 
             if (File.Exists(rutaEjecutable))
             {
+                AbrirSteamSiEsNecesario(juegoSeleccionado);
+
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = rutaEjecutable,
@@ -307,6 +315,36 @@ namespace StormLibrary
                 FileName = "https://github.com/acierto-incomodo/StormLibraryV2/releases/latest",
                 UseShellExecute = true
             });
+        }
+
+        private void AbrirSteamSiEsNecesario(Juego juego)
+        {
+            if (juego.steam?.ToLower() != "si")
+                return;
+
+            string steamPath = @"C:\Program Files (x86)\Steam\Steam.exe";
+
+            if (File.Exists(steamPath))
+            {
+                // Evita abrir Steam dos veces
+                if (Process.GetProcessesByName("steam").Length == 0)
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = steamPath,
+                        UseShellExecute = true
+                    });
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Este juego requiere Steam, pero no se encontró Steam instalado.",
+                    "Steam no encontrado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
         }
     }
 }

@@ -9,6 +9,7 @@
         public string archivo_ejecutable { get; set; }
         public string descripcion { get; set; }
         public string requisitos { get; set; }
+        public string steam { get; set; }
         public string logo { get; set; }
     }
 }

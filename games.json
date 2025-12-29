@@ -7,6 +7,7 @@
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas.",
     "requisitos": "Internet",
+    "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/The-Shooter-Launcher/main/logo.png"
   },
   {
@@ -17,6 +18,7 @@
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Un juego divertido para jugar con amigos. Corre con karts en diferentes pistas, recoge potenciadores y lanza objetos a tus oponentes para ganar la carrera. ¡Compite en línea y demuestra quién es el mejor piloto de karts!",
     "requisitos": "Internet",
+    "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/KartsMultiplayer/main/icono.png"
   },
   {
@@ -27,6 +29,7 @@
     "archivo_ejecutable": "R.E.P.O. Launcher.exe",
     "descripcion": "R.E.P.O. es un juego cooperativo de terror y acción donde los jugadores exploran zonas peligrosas para recuperar objetos valiosos, evitando criaturas y usando estrategia en equipo. En esta versión se incluyen **algunos mods** que añaden mejoras, cambios en la jugabilidad y contenido extra para una experiencia más divertida.",
     "requisitos": "Steam abierto e internet",
+    "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/sgs-blog-disccussions/main/icono.png"
   },
   {
@@ -37,6 +40,7 @@
     "archivo_ejecutable": "Lethal Company - Launcher.exe",
     "descripcion": "Lethal Company es un juego cooperativo de terror donde un grupo de jugadores explora instalaciones abandonadas para recolectar chatarra, enfrentándose a criaturas peligrosas y gestionando bien el riesgo para cumplir los objetivos y sobrevivir.",
     "requisitos": "Steam abierto e internet",
+    "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/LethalCompany-Launcher/main/icono-lethal.png"
   },
   {
@@ -47,6 +51,7 @@
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Mage Arena es un juego de arena de magos donde los jugadores compiten en combates mágicos, usando hechizos y habilidades únicas para derrotar a sus oponentes.",
     "requisitos": "Steam abierto e internet",
+    "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/mage_arena/main/icono.png"
   }
 ]
