@@ -281,13 +281,32 @@ namespace StormLibrary
 
         private async void Descargar_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Deseas descargar este juego?", "Descargar juego", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show(
+                "¿Deseas descargar este juego?",
+                "Descargar juego",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
             if (result != DialogResult.Yes) return;
+
+            MessageBox.Show(
+                "El juego se está descargando, por favor espera...",
+                "Descargando",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
 
             string rutaDescarga = Path.Combine(downloadsDir, juegoSeleccionado.archivoDescargado);
             await DescargarJuego(juegoSeleccionado, rutaDescarga);
 
-            string carpetaJuego = Path.GetFullPath(juegoSeleccionado.ubicacion.Replace("%appdata%", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)));
+            string carpetaJuego = Path.GetFullPath(
+                juegoSeleccionado.ubicacion.Replace(
+                    "%appdata%",
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                )
+            );
+
             Directory.CreateDirectory(carpetaJuego);
 
             Process.Start(new ProcessStartInfo
@@ -308,6 +327,7 @@ namespace StormLibrary
                 File.WriteAllBytes(rutaDestino, data);
             }
             MessageBox.Show("Descarga completada.");
+            AbrirSteamSiEsNecesario(juegoSeleccionado);
         }
 
         private void webOpenShare1_Click(object sender, EventArgs e)
