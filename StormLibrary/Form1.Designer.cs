@@ -58,6 +58,8 @@
             Controls.Add(labelStatus);
             Controls.Add(panelJuego);
             ForeColor = SystemColors.Control;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);

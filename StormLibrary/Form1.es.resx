@@ -117,12 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listGames.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="listGames.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 382</value>
+  </data>
   <data name="webOpenShare1.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 29</value>
   </data>
   <data name="webOpenShare1.Text" xml:space="preserve">
     <value>Compartir Programa</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1161, 508</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1014,5 +1024,14 @@
         Jx0zGSjKSRd39WGxIg3Mrpr4GFkOnjbBjSqYIXzxnzsPgvD1u31juDxTepjPhShGrOJLAYJEGk+dJGYM
         d0h6HZAkMxqnBGShDkeMMUpQIOWyZXeRmyhqZ49SyEObozj+f8Nu5yfunJL/AAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1177, 547</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1177, 547</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>StormLibraryV2</value>
   </data>
 </root>
