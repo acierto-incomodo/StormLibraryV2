@@ -71,8 +71,8 @@
     "archivoDescargado": "MiSide_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/MiSide",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "MMiSide es un videojuego de aventura con elementos de horror psicológico. Empieza como una especie de simulador de relaciones con una chica virtual llamada Mita, pero la historia se vuelve oscura y perturbadora cuando el personaje principal queda atrapado dentro del mundo del juego y debe resolver puzles, explorar y tomar decisiones que afectan el final de la historia.",
-    "requisitos": "Internet",
+    "descripcion": "MiSide es un videojuego de aventura con elementos de horror psicológico. Empieza como una especie de simulador de relaciones con una chica virtual llamada Mita, pero la historia se vuelve oscura y perturbadora cuando el personaje principal queda atrapado dentro del mundo del juego y debe resolver puzles, explorar y tomar decisiones que afectan el final de la historia.",
+    "requisitos": "Sin requisitos especiales",
     "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/miside/main/icono.png"
   }
