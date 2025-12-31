@@ -5,7 +5,7 @@
     "archivoDescargado": "The_Shooter_Launcher_Installer_New.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/TheShooterLauncher_New",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas. Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit) / Linux, Procesador: Intel Core i5-6600, Memoria RAM: 4 GB, Gráfica: NVIDIA GTX 970 (4 GB VRAM) y Almacenamiento: 2 GB libre.",
+    "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas. Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit) / Linux, Procesador: Intel Core i5-6600, Memoria RAM: 4 GB, Gráfica: NVIDIA GTX 970 (4 GB VRAM) y Almacenamiento: 1 GB libre.",
     "requisitos": "Internet",
     "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/The-Shooter-Launcher/main/logo.png"
@@ -16,7 +16,7 @@
     "archivoDescargado": "Karts_Multiplayer_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/KartsMultiplayerLauncher",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "Un juego divertido para jugar con amigos. Corre con karts en diferentes pistas, recoge potenciadores y lanza objetos a tus oponentes para ganar la carrera. ¡Compite en línea y demuestra quién es el mejor piloto de karts! Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit) / Linux, Procesador: Intel Core i5-6600, Memoria RAM: 3 GB, Gráfica: Intel UHD Graphics o similares y Almacenamiento: 2 GB libre.",
+    "descripcion": "Un juego divertido para jugar con amigos. Corre con karts en diferentes pistas, recoge potenciadores y lanza objetos a tus oponentes para ganar la carrera. ¡Compite en línea y demuestra quién es el mejor piloto de karts! Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit) / Linux, Procesador: Intel Core i5-6600, Memoria RAM: 2 GB, Gráfica: Intel UHD Graphics o similares y Almacenamiento: 500 MB libre.",
     "requisitos": "Internet",
     "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/KartsMultiplayer/main/icono.png"
