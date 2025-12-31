@@ -5,7 +5,7 @@
     "archivoDescargado": "The_Shooter_Launcher_Installer_New.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/TheShooterLauncher_New",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas.",
+    "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas. Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit) / Linux, Procesador: Intel Core i5-6600, Memoria RAM: 4 GB, Gráfica: NVIDIA GTX 970 (4 GB VRAM) y Almacenamiento: 2 GB libre.",
     "requisitos": "Internet",
     "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/The-Shooter-Launcher/main/logo.png"
@@ -16,7 +16,7 @@
     "archivoDescargado": "Karts_Multiplayer_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/KartsMultiplayerLauncher",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "Un juego divertido para jugar con amigos. Corre con karts en diferentes pistas, recoge potenciadores y lanza objetos a tus oponentes para ganar la carrera. ¡Compite en línea y demuestra quién es el mejor piloto de karts!",
+    "descripcion": "Un juego divertido para jugar con amigos. Corre con karts en diferentes pistas, recoge potenciadores y lanza objetos a tus oponentes para ganar la carrera. ¡Compite en línea y demuestra quién es el mejor piloto de karts! Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit) / Linux, Procesador: Intel Core i5-6600, Memoria RAM: 3 GB, Gráfica: Intel UHD Graphics o similares y Almacenamiento: 2 GB libre.",
     "requisitos": "Internet",
     "steam": "no",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/KartsMultiplayer/main/icono.png"
@@ -27,7 +27,7 @@
     "archivoDescargado": "REPO_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/REPO_Launcher",
     "archivo_ejecutable": "R.E.P.O. Launcher.exe",
-    "descripcion": "R.E.P.O. es un juego cooperativo de terror y acción donde los jugadores exploran zonas peligrosas para recuperar objetos valiosos, evitando criaturas y usando estrategia en equipo. En esta versión se incluyen **algunos mods** que añaden mejoras, cambios en la jugabilidad y contenido extra para una experiencia más divertida.",
+    "descripcion": "R.E.P.O. es un juego cooperativo de terror y acción donde los jugadores exploran zonas peligrosas para recuperar objetos valiosos, evitando criaturas y usando estrategia en equipo. En esta versión se incluyen **algunos mods** que añaden mejoras, cambios en la jugabilidad y contenido extra para una experiencia más divertida. Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit), Procesador: Intel Core i5-6600, Memoria RAM: 8 GB, Gráfica: NVIDIA GTX 970 (4 GB VRAM), Almacenamiento: 1 GB libre y DirectX: Version 10.",
     "requisitos": "Steam abierto e internet",
     "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/sgs-blog-disccussions/main/icono.png"
@@ -38,7 +38,7 @@
     "archivoDescargado": "LethalCompany_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/LethalCompany_Launcher",
     "archivo_ejecutable": "Lethal Company - Launcher.exe",
-    "descripcion": "Lethal Company es un juego cooperativo de terror donde un grupo de jugadores explora instalaciones abandonadas para recolectar chatarra, enfrentándose a criaturas peligrosas y gestionando bien el riesgo para cumplir los objetivos y sobrevivir.",
+    "descripcion": "Lethal Company es un juego cooperativo de terror donde un grupo de jugadores explora instalaciones abandonadas para recolectar chatarra, enfrentándose a criaturas peligrosas y gestionando bien el riesgo para cumplir los objetivos y sobrevivir. Requisitos Mínimos (Oficiales): Sistema: Windows 10, Procesador: Intel Core i5-7400 (≈3.0 GHz), Memoria RAM: 8 GB, Gráfica: NVIDIA GeForce GTX 1050 (DirectX 11) y Almacenamiento: 1 GB libre.",
     "requisitos": "Steam abierto e internet",
     "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/LethalCompany-Launcher/main/icono-lethal.png"
@@ -49,7 +49,7 @@
     "archivoDescargado": "MageArena_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/MageArenaLauncher",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "Mage Arena es un juego de arena de magos donde los jugadores compiten en combates mágicos, usando hechizos y habilidades únicas para derrotar a sus oponentes.",
+    "descripcion": "Mage Arena es un juego de arena de magos donde los jugadores compiten en combates mágicos, usando hechizos y habilidades únicas para derrotar a sus oponentes. Requisitos Mínimos (Oficiales): Sistema: Windows 10, Procesador: Intel Core i5-7400, Memoria RAM: 8 GB, Gráfica: NVIDIA GeForce GTX 1060 (3 GB VRAM) y Almacenamiento: 2 GB libre.",
     "requisitos": "Steam abierto e internet",
     "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/mage_arena/main/icono.png"
@@ -60,9 +60,53 @@
     "archivoDescargado": "BackseatDrivers_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/BackseatDriversLauncher",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "Backseat Drivers es un juego de carreras donde los jugadores compiten en pistas desafiantes, usando vehículos con diferentes características para ganar carreras.",
+    "descripcion": "Backseat Drivers es un juego de carreras donde los jugadores compiten en pistas desafiantes, usando vehículos con diferentes características para ganar carreras. Requisitos Mínimos (Oficiales): CPU: Intel i5 / Ryzen 5 o equivalente, RAM: 8 GB y GPU integrada: Intel Iris Xe / AMD Vega 8.",
     "requisitos": "Steam abierto e internet",
     "steam": "si",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/backseat_drivers/main/icono.png"
+  },
+  {
+    "nombre": "Content Warning",
+    "descargar": "https://github.com/acierto-incomodo/content_warning/releases/latest/download/BackseatDrivers_Launcher_Installer.exe",
+    "archivoDescargado": "ContentWarning_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/ContentWarning",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Content Warning es un juego cooperativo de terror donde juegas con amigos grabando vídeos de criaturas y situaciones peligrosas para subirlos a una red social ficticia. El objetivo es conseguir visitas, sobrevivir y volver con las grabaciones, aunque el miedo y el caos suelen salir mal. Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit), Procesador: Intel Core i5 @ 2.5 GHz o equivalente, Memoria RAM: 8 GB, Gráfica: NVIDIA GeForce GTX 1050 Ti o AMD R9 380 (2 GB VRAM), Almacenamiento: ~4 GB libre y DirectX 11 compatible.",
+    "requisitos": "Steam abierto e internet",
+    "steam": "si",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/content_warning/main/icono.png"
+  },
+  {
+    "nombre": "Hollow Knight: Silksong",
+    "descargar": "https://github.com/acierto-incomodo/hollow_knight_silksong/releases/latest/download/HollowKnightSilksong_Launcher_Installer.exe",
+    "archivoDescargado": "HollowKnightSilksong_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/HollowKnightSilksong",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Hollow Knight: Silksong es un juego de acción y exploración (Metroidvania) en el que controlas a Hornet, una guerrera ágil, mientras exploras un nuevo reino lleno de enemigos, jefes desafiantes y secretos. El juego se centra en combate rápido, movimientos precisos y descubrir la historia del mundo y de Hornet. En resumen: *exploración profunda, mucha acción y un mundo hermoso pero peligroso. Requisitos Mínimos (Oficiales): Sistema: Windows 10 (64-bit), Procesador: Intel Core i3-3240 o AMD FX-4300, Memoria RAM: 4 GB, Gráfica: NVIDIA GeForce GTX 560 Ti / Radeon HD 7750 (1 GB), Almacenamiento: 8 GB libre y DirectX: Version 10.",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/content_warning.png"
+  },
+  {
+    "nombre": "Unrailed!",
+    "descargar": "https://github.com/acierto-incomodo/unrailed/releases/latest/download/Unrailed_Launcher_Installer.exe",
+    "archivoDescargado": "Unrailed_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/Unrailed",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Unrailed! es un juego cooperativo de construcción y supervivencia en el que tú y tus amigos debéis construir vías de tren antes de que el tren se salga de los bordes del mapa. Cortáis madera, colocáis raíles, gestionáis recursos y trabajáis juntos para avanzar lo máximo posible. Es caótico, divertido y exige coordinación en tiempo real. Requisitos Mínimos (Oficiales): Sistema: Windows 7 o superior (64-bit recomendado), Procesador: Dual-Core 2 GHz, Memoria RAM: 4 GB, Gráfica: Intel HD Graphics 520 (integrada), Almacenamiento: 2 GB libre y DirectX: Version 9 compatible.",
+    "requisitos": "Steam abierto e internet",
+    "steam": "si",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/unrailed/main/unrailed.png"
+  },
+  {
+    "nombre": "Unrailed 2: Back on Track",
+    "descargar": "https://github.com/acierto-incomodo/unrailed2/releases/latest/download/Unrailed2_Launcher_Installer.exe",
+    "archivoDescargado": "Unrailed2_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/Unrailed2",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Unrailed 2: Back on Track es la secuela del juego cooperativo de construcción de vías de tren en el que tú y tus amigos deben colaborar para poner rieles antes de que el tren se descarrile mientras avanza por mundos generados proceduralmente. Tiene multijugador local y online, misiones, biomas nuevos, jefes y mejoras permanentes, y puedes crear y compartir tus propios mapas con la comunidad. Requisitos Mínimos (Oficiales): CPU: Intel Core i5-6200U, RAM: 8 GB, GPU: Intel HD 520 compatible y Almacenamiento: ~1 GB libre.",
+    "requisitos": "Steam abierto e internet",
+    "steam": "si",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/unrailed2/main/unrailed2.png"
   }
 ]
