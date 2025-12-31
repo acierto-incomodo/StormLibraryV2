@@ -10,6 +10,7 @@
         public string descripcion { get; set; }
         public string requisitos { get; set; }
         public string steam { get; set; }
+        public string game_id { get; set; }
         public string logo { get; set; }
     }
 }

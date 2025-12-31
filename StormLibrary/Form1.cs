@@ -1,3 +1,4 @@
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -56,6 +57,8 @@ namespace StormLibrary
             listGames.DisplayMember = "nombre";
 
             ActualizarLabelVersion();
+            RegistrarProtocolo();
+            ProcesarDeepLink();
         }
 
         private void listGames_SelectedIndexChanged(object sender, EventArgs e)
@@ -203,6 +206,43 @@ namespace StormLibrary
                 }
             };
 
+            // Botón Compartir Juego
+            Button btnCompartir = new Button
+            {
+                Size = new Size(200, 40),
+                Location = new Point(180, 370), // Ajusta según tu layout
+                Text = "Compartir Juego",
+                Anchor = AnchorStyles.Top | AnchorStyles.Left
+            };
+
+            btnCompartir.Click += (s, e) =>
+            {
+                // Construimos el deep link
+                string deepLink = $"stormlibraryv2://game/{juego.game_id}";
+
+                // Construimos el texto a copiar
+                string textoCopiado = $"Juega conmigo a {deepLink}";
+
+                // Copiamos al portapapeles
+                Clipboard.SetText(textoCopiado);
+
+                // Cambiamos el texto del botón
+                string originalText = btnCompartir.Text;
+                btnCompartir.Text = "Enlace del juego copiado";
+
+                // Timer para restaurar texto después de 5 segundos
+                System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+                timer.Interval = 5000;
+                timer.Tick += (senderTimer, args) =>
+                {
+                    btnCompartir.Text = originalText;
+                    timer.Stop();
+                    timer.Dispose();
+                };
+                timer.Start();
+            };
+
+            panelJuego.Controls.Add(btnCompartir);
             panelJuego.Controls.Add(logo);
             panelJuego.Controls.Add(titulo);
             panelJuego.Controls.Add(desc);
@@ -290,6 +330,8 @@ namespace StormLibrary
 
             if (result != DialogResult.Yes) return;
 
+            labelStatus.Text = "Descargando instalador...";
+
             MessageBox.Show(
                 "El juego se está descargando, por favor espera...",
                 "Descargando",
@@ -327,16 +369,33 @@ namespace StormLibrary
                 File.WriteAllBytes(rutaDestino, data);
             }
             MessageBox.Show("Descarga completada.");
+            ActualizarLabelVersion();
             AbrirSteamSiEsNecesario(juegoSeleccionado);
         }
 
         private void webOpenShare1_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo
+            string enlace = "https://github.com/acierto-incomodo/StormLibraryV2/releases/latest";
+
+            // Copiar al portapapeles
+            Clipboard.SetText(enlace);
+
+            // Cambiar texto del botón temporalmente
+            Button btn = sender as Button;
+            if (btn == null) return;
+
+            string originalText = btn.Text;
+            btn.Text = "Enlace copiado";
+
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = 5000; // 5 segundos
+            timer.Tick += (s, ev) =>
             {
-                FileName = "https://github.com/acierto-incomodo/StormLibraryV2/releases/latest",
-                UseShellExecute = true
-            });
+                btn.Text = originalText;
+                timer.Stop();
+                timer.Dispose();
+            };
+            timer.Start();
         }
 
         private void AbrirSteamSiEsNecesario(Juego juego)
@@ -381,6 +440,110 @@ namespace StormLibrary
             else
             {
                 labelStatus.Text = "Versión desconocida";
+            }
+        }
+
+        private void RegistrarProtocolo()
+        {
+            string protocolo = "stormlibraryv2";
+            string exePath = Application.ExecutablePath;
+
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(
+                $@"Software\Classes\{protocolo}"))
+            {
+                key.SetValue("", "URL:StormLibraryV2 Protocol");
+                key.SetValue("URL Protocol", "");
+
+                using (RegistryKey defaultIcon = key.CreateSubKey("DefaultIcon"))
+                {
+                    defaultIcon.SetValue("", $"\"{exePath}\",1");
+                }
+
+                using (RegistryKey command = key.CreateSubKey(@"shell\open\command"))
+                {
+                    command.SetValue("", $"\"{exePath}\" \"%1\"");
+                }
+            }
+        }
+
+        private async void ProcesarDeepLink()
+        {
+            if (string.IsNullOrEmpty(Program.DeepLinkUrl))
+                return;
+
+            if (juegos == null || juegos.Count == 0)
+                return;
+
+            Uri uri;
+            try
+            {
+                uri = new Uri(Program.DeepLinkUrl);
+            }
+            catch
+            {
+                return;
+            }
+
+            // Solo manejamos deep links tipo: stormlibraryv2://game/game-id
+            if (!uri.Host.Equals("game", StringComparison.OrdinalIgnoreCase))
+                return;
+
+            string gameId = uri.AbsolutePath.Trim('/');
+            if (string.IsNullOrEmpty(gameId))
+                return;
+
+            Juego juego = juegos.Find(j =>
+                !string.IsNullOrEmpty(j.game_id) &&
+                j.game_id.Equals(gameId, StringComparison.OrdinalIgnoreCase)
+            );
+
+            if (juego == null)
+                return;
+
+            // Seleccionamos el juego en la lista
+            listGames.SelectedItem = juego;
+            listGames.Focus();
+
+            // Obtenemos la ruta del ejecutable
+            string carpetaJuego = Path.GetFullPath(
+                juego.ubicacion.Replace("%appdata%", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData))
+            );
+            string rutaEjecutable = Path.Combine(carpetaJuego, juego.archivo_ejecutable);
+
+            // Si el juego existe, lo abrimos
+            if (File.Exists(rutaEjecutable))
+            {
+                AbrirSteamSiEsNecesario(juego);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = rutaEjecutable,
+                    WorkingDirectory = carpetaJuego,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                // Si no existe, lo descargamos e instalamos
+                Directory.CreateDirectory(carpetaJuego);
+
+                string rutaDescarga = Path.Combine(downloadsDir, juego.archivoDescargado);
+
+                // Descarga
+                using (HttpClient http = new HttpClient())
+                {
+                    byte[] data = await http.GetByteArrayAsync(juego.descargar);
+                    File.WriteAllBytes(rutaDescarga, data);
+                }
+
+                MessageBox.Show("El juego se descargó correctamente. Se abrirá el instalador.", "Descarga completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abrir instalador
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = rutaDescarga,
+                    WorkingDirectory = carpetaJuego,
+                    UseShellExecute = true
+                });
             }
         }
     }
