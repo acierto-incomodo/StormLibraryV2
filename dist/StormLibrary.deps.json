@@ -1,0 +1,31 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "StormLibrary/1.0.0": {
+        "runtime": {
+          "StormLibrary.dll": {}
+        },
+        "resources": {
+          "es-ES/StormLibrary.resources.dll": {
+            "locale": "es-ES"
+          },
+          "es/StormLibrary.resources.dll": {
+            "locale": "es"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StormLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

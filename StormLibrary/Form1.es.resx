@@ -125,11 +125,29 @@
   <data name="listGames.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 361</value>
   </data>
+  <data name="labelStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 407</value>
+  </data>
+  <data name="webOpenShare1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>923, 436</value>
+  </data>
   <data name="webOpenShare1.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 29</value>
   </data>
   <data name="webOpenShare1.Text" xml:space="preserve">
     <value>Compartir StormLibraryV2</value>
+  </data>
+  <data name="reloadGameVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 440</value>
+  </data>
+  <data name="reloadGameVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 25</value>
+  </data>
+  <data name="reloadGameVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="reloadGameVersion.Text" xml:space="preserve">
+    <value>Recargar</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1161, 508</value>

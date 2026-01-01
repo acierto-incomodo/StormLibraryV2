@@ -332,45 +332,83 @@ namespace StormLibrary
 
             labelStatus.Text = "Descargando instalador...";
 
-            MessageBox.Show(
-                "El juego se está descargando, por favor espera...",
-                "Descargando",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            // Cambiar cursor a "espera"
+            Cursor.Current = Cursors.WaitCursor;
 
-            string rutaDescarga = Path.Combine(downloadsDir, juegoSeleccionado.archivoDescargado);
-            await DescargarJuego(juegoSeleccionado, rutaDescarga);
-
-            string carpetaJuego = Path.GetFullPath(
-                juegoSeleccionado.ubicacion.Replace(
-                    "%appdata%",
-                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                )
-            );
-
-            Directory.CreateDirectory(carpetaJuego);
-
-            Process.Start(new ProcessStartInfo
+            try
             {
-                FileName = rutaDescarga,
-                WorkingDirectory = carpetaJuego,
-                UseShellExecute = true
-            });
+                string rutaDescarga = Path.Combine(downloadsDir, juegoSeleccionado.archivoDescargado);
+                await DescargarJuego(juegoSeleccionado, rutaDescarga);
+
+                string carpetaJuego = Path.GetFullPath(
+                    juegoSeleccionado.ubicacion.Replace(
+                        "%appdata%",
+                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                    )
+                );
+
+                Directory.CreateDirectory(carpetaJuego);
+
+                if (File.Exists(rutaDescarga))
+                {
+                    // Abrir el instalador
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = rutaDescarga,
+                        WorkingDirectory = carpetaJuego,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se encontró el archivo descargado. Asegúrate de que la descarga se completó correctamente.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar o abrir el juego:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Volver cursor a normal
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private async Task DescargarJuego(Juego juego, string rutaDestino)
         {
-            using (HttpClient http = new HttpClient())
+            try
             {
-                byte[] data = await http.GetByteArrayAsync(juego.descargar);
-                string carpeta = Path.GetDirectoryName(rutaDestino);
-                Directory.CreateDirectory(carpeta);
-                File.WriteAllBytes(rutaDestino, data);
+                // Cambiar cursor a "espera"
+                Cursor.Current = Cursors.WaitCursor;
+
+                using (HttpClient http = new HttpClient())
+                {
+                    byte[] data = await http.GetByteArrayAsync(juego.descargar);
+                    string carpeta = Path.GetDirectoryName(rutaDestino);
+                    Directory.CreateDirectory(carpeta);
+                    File.WriteAllBytes(rutaDestino, data);
+                }
+
+                MessageBox.Show("Descarga completada.");
             }
-            MessageBox.Show("Descarga completada.");
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar el juego:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Volver cursor a normal
+                Cursor.Current = Cursors.Default;
+            }
+
             ActualizarLabelVersion();
-            AbrirSteamSiEsNecesario(juegoSeleccionado);
+            AbrirSteamSiEsNecesario(juego);
         }
 
         private void webOpenShare1_Click(object sender, EventArgs e)
@@ -466,7 +504,7 @@ namespace StormLibrary
             }
         }
 
-        private async void ProcesarDeepLink()
+        private void ProcesarDeepLink()
         {
             if (string.IsNullOrEmpty(Program.DeepLinkUrl))
                 return;
@@ -523,27 +561,13 @@ namespace StormLibrary
             }
             else
             {
-                // Si no existe, lo descargamos e instalamos
-                Directory.CreateDirectory(carpetaJuego);
-
-                string rutaDescarga = Path.Combine(downloadsDir, juego.archivoDescargado);
-
-                // Descarga
-                using (HttpClient http = new HttpClient())
-                {
-                    byte[] data = await http.GetByteArrayAsync(juego.descargar);
-                    File.WriteAllBytes(rutaDescarga, data);
-                }
-
-                MessageBox.Show("El juego se descargó correctamente. Se abrirá el instalador.", "Descarga completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Abrir instalador
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = rutaDescarga,
-                    WorkingDirectory = carpetaJuego,
-                    UseShellExecute = true
-                });
+                // Si no existe, mostramos mensaje
+                MessageBox.Show(
+                    $"El juego \"{juego.nombre}\" no está instalado.\nPor favor instálalo antes de abrirlo.",
+                    "Juego no instalado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             }
         }
     }

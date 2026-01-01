@@ -21,6 +21,7 @@
             labelStatus = new Label();
             panelJuego = new Panel();
             webOpenShare1 = new Button();
+            reloadGameVersion = new Button();
             SuspendLayout();
             // 
             // listGames
@@ -49,10 +50,18 @@
             webOpenShare1.UseVisualStyleBackColor = false;
             webOpenShare1.Click += webOpenShare1_Click;
             // 
+            // reloadGameVersion
+            // 
+            resources.ApplyResources(reloadGameVersion, "reloadGameVersion");
+            reloadGameVersion.BackColor = SystemColors.ActiveCaptionText;
+            reloadGameVersion.Name = "reloadGameVersion";
+            reloadGameVersion.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             BackColor = SystemColors.ActiveCaptionText;
+            Controls.Add(reloadGameVersion);
             Controls.Add(webOpenShare1);
             Controls.Add(listGames);
             Controls.Add(labelStatus);
@@ -67,5 +76,6 @@
         }
 
         private Button webOpenShare1;
+        private Button reloadGameVersion;
     }
 }

@@ -73,7 +73,7 @@
   },
   {
     "nombre": "Content Warning",
-    "descargar": "https://github.com/acierto-incomodo/content_warning/releases/latest/download/BackseatDrivers_Launcher_Installer.exe",
+    "descargar": "https://github.com/acierto-incomodo/content_warning/releases/latest/download/ContentWarning_Launcher_Installer.exe",
     "archivoDescargado": "ContentWarning_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/ContentWarning",
     "archivo_ejecutable": "installer_updater.exe",
