@@ -137,14 +137,8 @@
   <data name="webOpenShare1.Text" xml:space="preserve">
     <value>Compartir StormLibraryV2</value>
   </data>
-  <data name="reloadGameVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 440</value>
-  </data>
   <data name="reloadGameVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 25</value>
-  </data>
-  <data name="reloadGameVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="reloadGameVersion.Text" xml:space="preserve">
     <value>Recargar</value>

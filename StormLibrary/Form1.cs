@@ -217,20 +217,19 @@ namespace StormLibrary
 
             btnCompartir.Click += (s, e) =>
             {
-                // Construimos el deep link
-                string deepLink = $"stormlibraryv2://game/{juego.game_id}";
+                // URL web del juego
+                string urlJuego = $"https://stormgamesstudios.vercel.app/juegos/juegos-url/{juego.game_id}/play";
 
-                // Construimos el texto a copiar
-                string textoCopiado = $"Juega conmigo a {deepLink}";
+                // Texto a copiar
+                string textoCopiado = $"Juega conmigo a {urlJuego}";
 
-                // Copiamos al portapapeles
+                // Copiar al portapapeles
                 Clipboard.SetText(textoCopiado);
 
-                // Cambiamos el texto del botón
+                // Feedback visual
                 string originalText = btnCompartir.Text;
                 btnCompartir.Text = "Enlace del juego copiado";
 
-                // Timer para restaurar texto después de 5 segundos
                 System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
                 timer.Interval = 5000;
                 timer.Tick += (senderTimer, args) =>
@@ -568,6 +567,46 @@ namespace StormLibrary
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+            }
+        }
+
+        private async void reloadGameVersion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Cursor de espera
+                Cursor.Current = Cursors.WaitCursor;
+                labelStatus.Text = "Comprobando actualizaciones...";
+
+                await updateManager.CheckAndDownloadFiles(dataDir);
+
+                juegos = await updateManager.LoadGames(dataDir);
+
+                listGames.DataSource = null;
+                listGames.DataSource = juegos;
+                listGames.DisplayMember = "nombre";
+
+                ActualizarLabelVersion();
+
+                MessageBox.Show(
+                    "La lista de juegos está actualizada.",
+                    "Actualización completada",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al comprobar actualizaciones:\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
     }

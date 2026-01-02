@@ -56,6 +56,7 @@
             reloadGameVersion.BackColor = SystemColors.ActiveCaptionText;
             reloadGameVersion.Name = "reloadGameVersion";
             reloadGameVersion.UseVisualStyleBackColor = false;
+            reloadGameVersion.Click += reloadGameVersion_Click;
             // 
             // Form1
             // 
