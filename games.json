@@ -94,5 +94,53 @@
     "steam": "no",
     "game_id": "hollow-knight-silksong",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+  },
+  {
+    "nombre": "Five Nights at Freddy's 1",
+    "descargar": "https://github.com/acierto-incomodo/fnaf_1/releases/latest/download/FNAF1_Launcher_Installer.exe",
+    "archivoDescargado": "FNAF1_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF1",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "FNAF1",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "game_id": "FNAF1",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+  },
+  {
+    "nombre": "Five Nights at Freddy's 2",
+    "descargar": "https://github.com/acierto-incomodo/fnaf_2/releases/latest/download/FNAF2_Launcher_Installer.exe",
+    "archivoDescargado": "FNAF2_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF2",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "FNAF2",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "game_id": "FNAF2",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+  },
+  {
+    "nombre": "Five Nights at Freddy's 3",
+    "descargar": "https://github.com/acierto-incomodo/fnaf_3/releases/latest/download/FNAF3_Launcher_Installer.exe",
+    "archivoDescargado": "FNAF3_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF3",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "FNAF3",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "game_id": "FNAF3",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+  },
+  {
+    "nombre": "Five Nights at Freddy's 4",
+    "descargar": "https://github.com/acierto-incomodo/fnaf_4/releases/latest/download/FNAF4_Launcher_Installer.exe",
+    "archivoDescargado": "FNAF4_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF4",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "FNAF4 y FNAF4 Halloween Edition",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "game_id": "FNAF4",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
   }
 ]
