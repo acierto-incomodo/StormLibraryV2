@@ -101,11 +101,11 @@
     "archivoDescargado": "FNAF1_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF1",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "FNAF1",
+    "descripcion": "Contenido: FNAF 1. Eres un guardia de seguridad nocturno en una pizzería llamada Freddy Fazbear’s Pizza. Tu trabajo es vigilar las cámaras y sobrevivir a los animatrónicos, que se mueven por la noche. No puedes moverte, solo usar puertas y luces para protegerte.",
     "requisitos": "Sin requisitos especiales",
     "steam": "no",
     "game_id": "FNAF1",
-    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/fnaf_1/main/fnaf_1.png"
   },
   {
     "nombre": "Five Nights at Freddy's 2",
@@ -113,11 +113,11 @@
     "archivoDescargado": "FNAF2_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF2",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "FNAF2",
+    "descripcion": "Contenido: FNAF 2. Es una precuela del primero. La pizzería es más grande y hay más animatrónicos, incluidos modelos nuevos y antiguos. No tienes puertas, así que debes usar una linterna y una máscara para defenderte mientras vigilas las cámaras.",
     "requisitos": "Sin requisitos especiales",
     "steam": "no",
     "game_id": "FNAF2",
-    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/fnaf_2/main/fnaf_2.png"
   },
   {
     "nombre": "Five Nights at Freddy's 3",
@@ -125,11 +125,11 @@
     "archivoDescargado": "FNAF3_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF3",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "FNAF3",
+    "descripcion": "Contenido: FNAF 3. Ocurre muchos años después, en una atracción de terror basada en la antigua pizzería. Solo hay un animatrónico real, pero el sistema falla y aparecen alucinaciones. El objetivo es mantener los sistemas funcionando y evitar que el animatrónico te alcance.",
     "requisitos": "Sin requisitos especiales",
     "steam": "no",
     "game_id": "FNAF3",
-    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/fnaf_3/main/fnaf_3.png"
   },
   {
     "nombre": "Five Nights at Freddy's 4",
@@ -137,10 +137,10 @@
     "archivoDescargado": "FNAF4_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/FNAF4",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "FNAF4 y FNAF4 Halloween Edition",
+    "descripcion": "Contenido: FNAF 4 y FNAF 4 Halloween Edition. Tiene lugar en una casa, no en una pizzería. Juegas como un niño que debe sobrevivir a animatrónicos pesadillescos durante la noche. No hay cámaras; debes escuchar con atención y usar puertas y una linterna para protegerte.",
     "requisitos": "Sin requisitos especiales",
     "steam": "no",
     "game_id": "FNAF4",
-    "logo": "https://raw.githubusercontent.com/acierto-incomodo/hollow_knight_silksong/main/hollow_knight_silksong.png"
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/fnaf_4/main/fnaf_4.png"
   }
 ]
