@@ -150,7 +150,7 @@
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/BuckshotRoulette",
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Es un juego de terror psicológico inspirado en la ruleta rusa. Juegas contra un personaje misterioso usando una escopeta, donde cada turno implica decisiones tensas y objetos que pueden cambiar el resultado. No da miedo por sustos, sino por la tensión y el riesgo constante.",
-    "requisitos": "Sin requisitos especiales",
+    "requisitos": "Steam abierto e internet",
     "steam": "si",
     "game_id": "buckshot_roulette",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/buckshot_roulette/main/buckshot_roulette.png"
