@@ -117,19 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listGames.ItemHeight" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="listGames.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 361</value>
+    <value>300, 340</value>
   </data>
   <data name="labelStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 407</value>
   </data>
   <data name="webOpenShare1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>923, 436</value>
+    <value>923, 449</value>
   </data>
   <data name="webOpenShare1.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 29</value>
@@ -143,8 +139,27 @@
   <data name="reloadGameVersion.Text" xml:space="preserve">
     <value>Recargar</value>
   </data>
+  <data name="usarStormStore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>786, 449</value>
+  </data>
+  <data name="usarStormStore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 29</value>
+  </data>
+  <data name="usarStormStore.Text" xml:space="preserve">
+    <value>Usar StormStore</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 20</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sofware made by StormGamesStudios</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1161, 508</value>
+    <value>1159, 500</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

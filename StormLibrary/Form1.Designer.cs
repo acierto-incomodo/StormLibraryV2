@@ -22,6 +22,8 @@
             panelJuego = new Panel();
             webOpenShare1 = new Button();
             reloadGameVersion = new Button();
+            usarStormStore = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // listGames
@@ -58,10 +60,25 @@
             reloadGameVersion.UseVisualStyleBackColor = false;
             reloadGameVersion.Click += reloadGameVersion_Click;
             // 
+            // usarStormStore
+            // 
+            resources.ApplyResources(usarStormStore, "usarStormStore");
+            usarStormStore.BackColor = SystemColors.ActiveCaptionText;
+            usarStormStore.Name = "usarStormStore";
+            usarStormStore.UseVisualStyleBackColor = false;
+            usarStormStore.Click += usarStormStore_Click;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             BackColor = SystemColors.ActiveCaptionText;
+            Controls.Add(label1);
+            Controls.Add(usarStormStore);
             Controls.Add(reloadGameVersion);
             Controls.Add(webOpenShare1);
             Controls.Add(listGames);
@@ -78,5 +95,7 @@
 
         private Button webOpenShare1;
         private Button reloadGameVersion;
+        private Button usarStormStore;
+        private Label label1;
     }
 }

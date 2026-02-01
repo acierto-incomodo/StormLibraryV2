@@ -159,7 +159,7 @@ namespace StormLibrary
             // Botón Abrir / Descargar
             btnAccion = new Button
             {
-                Size = new Size(200, 40),
+                Size = new Size(180, 40),
                 Location = new Point(180, 320),
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -167,8 +167,8 @@ namespace StormLibrary
             // Botón Abrir carpeta
             Button btnAbrirCarpeta = new Button
             {
-                Size = new Size(200, 40),
-                Location = new Point(400, 320),
+                Size = new Size(180, 40),
+                Location = new Point(390, 320),
                 Text = "Abrir carpeta",
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -183,8 +183,8 @@ namespace StormLibrary
             // Botón Desinstalar
             Button btnDesinstalar = new Button
             {
-                Size = new Size(200, 40),
-                Location = new Point(620, 320),
+                Size = new Size(180, 40),
+                Location = new Point(600, 320),
                 Text = "Desinstalar",
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
@@ -209,7 +209,7 @@ namespace StormLibrary
             // Botón Compartir Juego
             Button btnCompartir = new Button
             {
-                Size = new Size(200, 40),
+                Size = new Size(180, 40),
                 Location = new Point(180, 370), // Ajusta según tu layout
                 Text = "Compartir Juego",
                 Anchor = AnchorStyles.Top | AnchorStyles.Left
@@ -608,6 +608,11 @@ namespace StormLibrary
             {
                 Cursor.Current = Cursors.Default;
             }
+        }
+
+        private void usarStormStore_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La función aun no esta disponible.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
