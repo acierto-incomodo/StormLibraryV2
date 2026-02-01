@@ -36,6 +36,9 @@ namespace StormLibrary
         {
             InitializeComponent();
 
+            // Suscribir el evento para el botón usarStormStore
+            usarStormStore.Click += usarStormStore_Click;
+
             checkFileTimer = new System.Windows.Forms.Timer();
             checkFileTimer.Interval = 2000;
             checkFileTimer.Tick += CheckFileTimer_Tick;
@@ -610,9 +613,99 @@ namespace StormLibrary
             }
         }
 
-        private void usarStormStore_Click(object sender, EventArgs e)
+        private async void usarStormStore_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La función aun no esta disponible.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Rutas a comprobar
+            string appDataStormStore = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "StormGamesStudios",
+                "StormStore",
+                "StormStore.exe"
+            );
+
+            string localAppDataStormStore = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "Programs",
+                "StormStore",
+                "StormStore.exe"
+            );
+
+            string programFilesStormStore = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),
+                "StormStore",
+                "StormStore.exe"
+            );
+
+            // Si ya existe en cualquiera de las ubicaciones, lo abrimos
+            string existente = null;
+            if (File.Exists(appDataStormStore))
+                existente = appDataStormStore;
+            else if (File.Exists(localAppDataStormStore))
+                existente = localAppDataStormStore;
+            else if (File.Exists(programFilesStormStore))
+                existente = programFilesStormStore;
+
+            if (existente != null)
+            {
+                try
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = existente,
+                        WorkingDirectory = Path.GetDirectoryName(existente),
+                        UseShellExecute = true
+                    });
+                    // Cerrar esta aplicación tras lanzar StormStore
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo abrir StormStore:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return;
+            }
+
+            // Si no está instalado: descargar e iniciar instalador
+            string installerUrl = "https://github.com/acierto-incomodo/StormStore/releases/download/v1.1.4/StormStore-Setup-1.1.4.exe";
+            string installerName = Path.GetFileName(new Uri(installerUrl).LocalPath);
+            string destino = Path.Combine(downloadsDir, installerName);
+
+            try
+            {
+                Directory.CreateDirectory(downloadsDir);
+
+                // Descargar si no existe ya el instalador
+                if (!File.Exists(destino))
+                {
+                    labelStatus.Text = "Descargando StormStore...";
+                    Cursor.Current = Cursors.WaitCursor;
+
+                    using (HttpClient http = new HttpClient())
+                    {
+                        byte[] data = await http.GetByteArrayAsync(installerUrl);
+                        File.WriteAllBytes(destino, data);
+                    }
+
+                    labelStatus.Text = "Descarga completada.";
+                }
+
+                // Ejecutar instalador y cerrar esta aplicación
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = destino,
+                    UseShellExecute = true
+                });
+
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar o ejecutar el instalador:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
     }
 }
