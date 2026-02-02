@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /Launcher/venv
 Installer/StormStore-Setup-1.1.4.exe
+output/StormLibraryV2_Installer.exe
