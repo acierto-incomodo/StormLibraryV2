@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os
+import shutil
 import requests
 from pathlib import Path
 import zipfile
@@ -119,6 +120,18 @@ class UpdaterWindow(QtWidgets.QWidget):
 
     def download_update(self, remote_version):
         try:
+            # Limpiar WinDownloads excepto StormLibraryVersion.txt
+            try:
+                for p in DOWNLOAD_DIR.iterdir():
+                    if p.name == "StormLibraryVersion.txt":
+                        continue
+                    if p.is_dir():
+                        shutil.rmtree(p)
+                    else:
+                        p.unlink()
+            except Exception:
+                pass
+
             # descargar version
             download(URL_VERSION, VERSION_FILE)
 

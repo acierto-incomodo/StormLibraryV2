@@ -1,6 +1,6 @@
 [Setup]
 AppName=StormLibrary by StormGamesStudios
-AppVersion=1.0.7
+AppVersion=1.0.8
 DefaultDirName={userappdata}\StormGamesStudios\StormLibraryV2
 DefaultGroupName=StormGamesStudios
 OutputDir=C:\Users\mapsp\Documents\GitHub\StormLibraryV2\output
@@ -11,7 +11,7 @@ AppCopyright=Copyright © 2025 StormGamesStudios. All rights reserved.
 VersionInfoCompany=StormGamesStudios
 AppPublisher=StormGamesStudios
 SetupIconFile=../logo.ico
-VersionInfoVersion=1.0.7.0
+VersionInfoVersion=1.0.8.0
 CloseApplications=yes
 CloseApplicationsFilter=StormLibrary.exe
 DisableDirPage=yes

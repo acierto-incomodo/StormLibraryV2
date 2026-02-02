@@ -1,4 +1,4 @@
-('C:\\Users\\mapsp\\source\\repos\\StormLibrary\\build\\installer_updater\\PYZ-00.pyz',
+('C:\\Users\\mapsp\\Documents\\GitHub\\StormLibraryV2\\build\\installer_updater\\PYZ-00.pyz',
  [('PySide6',
    'C:\\Users\\mapsp\\AppData\\Roaming\\Python\\Python312\\site-packages\\PySide6\\__init__.py',
    'PYMODULE'),
