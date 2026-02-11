@@ -174,7 +174,7 @@
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/DOOM",
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Es un juego de puzles donde controlas dos personajes al mismo tiempo, uno con cada mitad del teclado o mando. El reto está en coordinar ambos movimientos para resolver niveles. Es simple en gráficos, pero muy exigente para la concentración y la coordinación.",
-    "requisitos": "Sin requisitos especiales",
+    "requisitos": "¿Requisitos?",
     "steam": "no",
     "game_id": "doom",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/DOOM/main/doom.png"
