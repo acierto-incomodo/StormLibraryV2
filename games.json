@@ -166,5 +166,17 @@
     "steam": "no",
     "game_id": "ambidextro",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/ambidextro/main/ambidextro.png"
+  },
+  {
+    "nombre": "DOOM Classic",
+    "descargar": "https://github.com/acierto-incomodo/DOOM/releases/latest/download/DOOM_Launcher_Installer.exe",
+    "archivoDescargado": "DOOM_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/DOOM",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Es un juego de puzles donde controlas dos personajes al mismo tiempo, uno con cada mitad del teclado o mando. El reto está en coordinar ambos movimientos para resolver niveles. Es simple en gráficos, pero muy exigente para la concentración y la coordinación.",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "game_id": "doom",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/DOOM/main/doom.png"
   }
 ]
