@@ -666,7 +666,7 @@ namespace StormLibrary
             }
 
             // Si no está instalado: descargar e iniciar instalador
-            string installerUrl = "https://github.com/acierto-incomodo/StormStore/releases/download/v1.1.4/StormStore-Setup-1.1.4.exe";
+            string installerUrl = "https://github.com/acierto-incomodo/StormStore/releases/latest/download/StormStore-Setup.exe";
             string installerName = Path.GetFileName(new Uri(installerUrl).LocalPath);
             string destino = Path.Combine(downloadsDir, installerName);
 
