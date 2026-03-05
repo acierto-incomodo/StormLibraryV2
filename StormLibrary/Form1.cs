@@ -62,6 +62,8 @@ namespace StormLibrary
             ActualizarLabelVersion();
             RegistrarProtocolo();
             ProcesarDeepLink();
+            // Mostrar alerta de instalación de StormStore cada vez que se inicia la aplicación
+            await PromptToInstallStormStoreIfMissingAsync();
         }
 
         private void listGames_SelectedIndexChanged(object sender, EventArgs e)
@@ -506,6 +508,88 @@ namespace StormLibrary
             }
         }
 
+        // Mostrar alerta en el inicio si StormStore no está instalado y ofrecer instalarlo
+        private async Task PromptToInstallStormStoreIfMissingAsync()
+        {
+            // Rutas a comprobar
+            string appDataStormStore = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "StormGamesStudios",
+                "StormStore",
+                "StormStore.exe"
+            );
+
+            string localAppDataStormStore = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "Programs",
+                "StormStore",
+                "StormStore.exe"
+            );
+
+            string programFilesStormStore = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),
+                "StormStore",
+                "StormStore.exe"
+            );
+
+            if (File.Exists(appDataStormStore) || File.Exists(localAppDataStormStore) || File.Exists(programFilesStormStore))
+                return;
+
+            var instalar = MessageBox.Show(
+                "StormStore no está instalado. ¿Deseas instalar StormStore?",
+                "Instalar StormStore",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (instalar != DialogResult.Yes)
+                return;
+
+            await DownloadAndRunStormStoreInstallerAsync();
+        }
+
+        private async Task DownloadAndRunStormStoreInstallerAsync()
+        {
+            string installerUrl = "https://github.com/acierto-incomodo/StormStore/releases/latest/download/StormStore-Setup.exe";
+            string installerName = Path.GetFileName(new Uri(installerUrl).LocalPath);
+            string destino = Path.Combine(downloadsDir, installerName);
+
+            try
+            {
+                Directory.CreateDirectory(downloadsDir);
+
+                if (!File.Exists(destino))
+                {
+                    labelStatus.Text = "Descargando StormStore...";
+                    Cursor.Current = Cursors.WaitCursor;
+
+                    using (HttpClient http = new HttpClient())
+                    {
+                        byte[] data = await http.GetByteArrayAsync(installerUrl);
+                        File.WriteAllBytes(destino, data);
+                    }
+
+                    labelStatus.Text = "Descarga completada.";
+                }
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = destino,
+                    UseShellExecute = true
+                });
+
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar o ejecutar el instalador:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
         private void ProcesarDeepLink()
         {
             if (string.IsNullOrEmpty(Program.DeepLinkUrl))
@@ -665,38 +749,10 @@ namespace StormLibrary
                 return;
             }
 
-            // Si no está instalado: descargar e iniciar instalador
-            string installerUrl = "https://github.com/acierto-incomodo/StormStore/releases/latest/download/StormStore-Setup.exe";
-            string installerName = Path.GetFileName(new Uri(installerUrl).LocalPath);
-            string destino = Path.Combine(downloadsDir, installerName);
-
+            // Si no está instalado: preguntar e iniciar instalador si el usuario acepta
             try
             {
-                Directory.CreateDirectory(downloadsDir);
-
-                // Descargar si no existe ya el instalador
-                if (!File.Exists(destino))
-                {
-                    labelStatus.Text = "Descargando StormStore...";
-                    Cursor.Current = Cursors.WaitCursor;
-
-                    using (HttpClient http = new HttpClient())
-                    {
-                        byte[] data = await http.GetByteArrayAsync(installerUrl);
-                        File.WriteAllBytes(destino, data);
-                    }
-
-                    labelStatus.Text = "Descarga completada.";
-                }
-
-                // Ejecutar instalador y cerrar esta aplicación
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = destino,
-                    UseShellExecute = true
-                });
-
-                Application.Exit();
+                await PromptToInstallStormStoreIfMissingAsync();
             }
             catch (Exception ex)
             {

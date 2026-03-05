@@ -13,7 +13,8 @@ AppPublisher=StormGamesStudios
 SetupIconFile=../logo.ico
 VersionInfoVersion=1.0.9.0
 CloseApplications=yes
-CloseApplicationsFilter=StormLibrary.exe,StormStore.exe
+CloseApplicationsFilter=StormLibrary.exe,StormStore.exe,installer_updater.exe
+RestartIfNeededByRun=no
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 
@@ -60,4 +61,26 @@ Filename: "{app}\StormStore-Setup.exe"; Parameters: "/S"; Flags: waituntiltermin
 
 ; Ejecutar el lanzador después de la instalación
 Filename: "{app}\installer_updater.exe"; Description: "Ejecutar StormLibrary"; Flags: nowait postinstall skipifsilent
-Filename: "{localappdata}\Programs\StormStore\StormStore.exe"; Description: "Ejecutar StormStore"; Flags: nowait postinstall skipifsilent unchecked; Components: stormstore
+Filename: "{userappdata}\StormGamesStudios\StormStore\StormStore.exe"; Description: "Ejecutar StormStore"; Flags: nowait postinstall skipifsilent; Components: stormstore
+
+[Code]
+procedure CurStepChanged(CurStep: TSetupStep);
+var
+  ResultCode: Integer;
+begin
+  if CurStep = ssInstall then
+  begin
+    Exec('taskkill.exe', '/F /IM StormLibrary.exe', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+  end;
+end;
+
+procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
+var
+  ResultCode: Integer;
+begin
+  if CurUninstallStep = usUninstall then
+  begin
+    Exec('taskkill.exe', '/F /IM StormLibrary.exe', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    Exec('taskkill.exe', '/F /IM installer_updater.exe', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+  end;
+end;
