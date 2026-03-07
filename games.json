@@ -1,15 +1,15 @@
 [
   {
-    "nombre": "The Shooter",
-    "descargar": "https://github.com/acierto-incomodo/The-Shooter-Launcher/releases/latest/download/The_Shooter_Launcher_Installer_New.exe",
-    "archivoDescargado": "The_Shooter_Launcher_Installer_New.exe",
+    "nombre": "Fusion Arena",
+    "descargar": "https://github.com/acierto-incomodo/The-Shooter-Launcher/releases/latest/download/Fusion_Arena_Launcher_Installer_New.exe",
+    "archivoDescargado": "Fusion_Arena_Launcher_Installer_New.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/TheShooterLauncher_New",
     "archivo_ejecutable": "installer_updater.exe",
-    "descripcion": "The Shooter es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas.",
+    "descripcion": "Fusion Arena es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas.",
     "requisitos": "Internet",
     "steam": "no",
-    "game_id": "the-shooter",
-    "logo": "https://raw.githubusercontent.com/acierto-incomodo/The-Shooter-Launcher/main/logo.png"
+    "game_id": "fusion-arena",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/The-Shooter-Launcher/main/icono.png"
   },
   {
     "nombre": "Karts Multiplayer",
