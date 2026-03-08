@@ -1,8 +1,8 @@
 [
   {
     "nombre": "Fusion Arena",
-    "descargar": "https://github.com/acierto-incomodo/The-Shooter-Launcher/releases/latest/download/Fusion_Arena_Launcher_Installer_New.exe",
-    "archivoDescargado": "Fusion_Arena_Launcher_Installer_New.exe",
+    "descargar": "https://github.com/acierto-incomodo/The-Shooter-Launcher/releases/latest/download/Fusion_Arena_Launcher_Installer.exe",
+    "archivoDescargado": "Fusion_Arena_Launcher_Installer.exe",
     "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/TheShooterLauncher_New",
     "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Fusion Arena es un juego multijugador en primera persona de tipo deathmatch, ambientado en un entorno tipo almacén. Los jugadores compiten entre sí disparando con varias armas (pistola, rifle automático y escopeta), recogiendo armas o recargas y salud en puntos repartidos por el mapa. Cada vez que un jugador muere, reaparece tras poco tiempo; al final de la partida, gana quien tenga más bajas.",
