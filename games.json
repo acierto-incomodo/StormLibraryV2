@@ -25,15 +25,15 @@
   },
   {
     "nombre": "R.E.P.O.",
-    "descargar": "https://github.com/acierto-incomodo/sgs-blog-disccussions/releases/latest/download/REPO_Launcher_Installer.exe",
+    "descargar": "https://github.com/acierto-incomodo/repo-game/releases/latest/download/REPO_Launcher_Installer.exe",
     "archivoDescargado": "REPO_Launcher_Installer.exe",
-    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/REPO_Launcher",
-    "archivo_ejecutable": "R.E.P.O. Launcher.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/repo-game",
+    "archivo_ejecutable": "installer_updater.exe",
     "descripcion": "Juego cooperativo de terror multijugador en el que hasta 6 jugadores exploran lugares siniestros para recuperar objetos valiosos, evitando criaturas peligrosas y usando la física del juego para transportar ítems sin romperlos. El enfoque está en el trabajo en equipo, los sustos y los momentos absurdos entre amigos.",
     "requisitos": "Steam abierto e internet",
     "steam": "si",
     "game_id": "repo",
-    "logo": "https://raw.githubusercontent.com/acierto-incomodo/sgs-blog-disccussions/main/icono.png"
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/repo-game/main/repo.png"
   },
   {
     "nombre": "Lethal Company",
@@ -190,5 +190,17 @@
     "steam": "si",
     "game_id": "scamline",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/ScamLine/main/ScamLine.png"
+  },
+  {
+    "nombre": "MiSide Zero",
+    "descargar": "https://github.com/acierto-incomodo/miside-zero/releases/latest/download/MiSideZero_Launcher_Installer.exe",
+    "archivoDescargado": "MiSideZero_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/MiSideZero",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "La demo de MiSide Zero es una pequeña versión jugable de un proyecto hecho por fans que sirve como precuela del juego original MiSide. En ella te pones en la piel de Zero, un personaje rubio que explora el mundo de MiSide aproximadamente un año antes de los eventos principales.",
+    "requisitos": "Sin requisitos especiales",
+    "steam": "no",
+    "game_id": "miside-zero",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/miside-zero/main/miside-zero.png"
   }
 ]
