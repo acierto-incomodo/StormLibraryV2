@@ -202,5 +202,17 @@
     "steam": "no",
     "game_id": "miside-zero",
     "logo": "https://raw.githubusercontent.com/acierto-incomodo/miside-zero/main/miside-zero.png"
+  },
+  {
+    "nombre": "Panicore",
+    "descargar": "https://github.com/acierto-incomodo/panicore/releases/latest/download/Panicore_Launcher_Installer.exe",
+    "archivoDescargado": "Panicore_Launcher_Installer.exe",
+    "ubicacion": "%appdata%/StormGamesStudios/NewGameDir/Panicore",
+    "archivo_ejecutable": "installer_updater.exe",
+    "descripcion": "Juego cooperativo de terror multijugador en el que hasta 6 jugadores exploran lugares siniestros para recuperar objetos valiosos, evitando criaturas peligrosas y usando la física del juego para transportar ítems sin romperlos. El enfoque está en el trabajo en equipo, los sustos y los momentos absurdos entre amigos.",
+    "requisitos": "Steam abierto e internet",
+    "steam": "si",
+    "game_id": "panicore",
+    "logo": "https://raw.githubusercontent.com/acierto-incomodo/panicore/main/panicore.png"
   }
 ]
